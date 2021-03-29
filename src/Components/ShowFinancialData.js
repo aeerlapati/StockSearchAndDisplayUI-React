@@ -201,7 +201,7 @@ const ShowFinancialData = ({dataIndex, dispathGetStocksPerformaceData, getFinanc
                 <Dialog maxWidth='xl' open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">
                                   Performace
-                                  <CloseIcon style={{float:"right"}} onClick={() => handleOnClose()} />
+                                  <CloseIcon style={{float:"right"}} onClick={() => handleClose()} />
                         </DialogTitle>
                 <DialogContent>
                      {getFinanceDataError ?
