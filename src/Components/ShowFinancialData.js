@@ -61,36 +61,6 @@ const ShowFinancialData = ({dataIndex, dispathGetStocksPerformaceData, getFinanc
 
     const [allStocks, setAllStocks] = useState([]);
     
-    const dummyData = [
-      [
-          "Apple Inc.",
-          "AAPL"
-      ],
-      [
-          "Taiwan Semiconductor Manufacturing Company Limited",
-          "TSM"
-      ],
-      [
-          "Gamestop Inc.",
-          "GME"
-      ],
-      [
-          "Roku Inc",
-          "ROKU"
-      ],
-      [
-          "General Motors",
-          "GM"
-      ],
-      [
-          "Leslie Pools",
-          "LESL"
-      ],
-      [
-          "Pool Corporation",
-          "POOL"
-      ]
-  ]
     const baseColumns = [
         {
           name: "Stock Name",
