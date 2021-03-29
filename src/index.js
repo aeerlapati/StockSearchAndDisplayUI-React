@@ -6,7 +6,7 @@ import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 
 ReactDOM.render(
-    <RootApp/>,
+    <RootApp />,
     document.getElementById('root')
 );
 

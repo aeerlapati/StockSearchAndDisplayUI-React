@@ -1,5 +1,5 @@
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
-import AssignmentIcon from '@material-ui/icons/Assignment';
+import AttachMoney from '@material-ui/icons/AttachMoneyTwoTone';
 import MUIDataTable from "mui-datatables";
 import {  getStockSymbols, getStockData, getStockPrice } from '../_actions/userActions';
 import React,{useState, useEffect} from 'react';
@@ -147,7 +147,7 @@ const DashBoard = ({dispatchgetStockSymbols, symbolData}) => {
     return(
         <div style={{marginTop:"20px", marginBottom:"20px", marginLeft:"30px", marginRight:"30px"}}>
           <MuiThemeProvider theme={overrideMuiTableTheme}>
-            <MUIDataTable data={allStocks} columns={baseColumns} options={options} title={<div style={{background:'white', fontSize:'1.75em', fontWeight:'bold', color:'#30465f', marginLeft:'-9px', float:'left'}} > <AssignmentIcon fontSize="small"></AssignmentIcon> Stocks</div>} />
+            <MUIDataTable data={allStocks} columns={baseColumns} options={options} title={<div style={{background:'white', fontSize:'1.75em', fontWeight:'bold', color:'#30465f', marginLeft:'-9px', float:'left'}} > <AttachMoney style={{color:'black'}}fontSize="small"></AttachMoney> Stocks</div>} />
           </MuiThemeProvider>
         </div>
         );

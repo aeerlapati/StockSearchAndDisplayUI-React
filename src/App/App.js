@@ -13,7 +13,7 @@ const App = () => {
 
     return (
         <div>
-             <h1 style={{marginTop:"20px", marginBottom:"20px", marginLeft:"20px", marginRight:"20px", fontFamily: "cursive", fontWeight:"bold"}}>Demo Stock Exchange Web App</h1>
+             <h1 style={{marginTop:"20px", marginBottom:"20px", marginLeft:"20px", marginRight:"20px", fontFamily: "cursive", fontWeight:"bold",color:'#FFFFFF'}}>Demo Stock Exchange Web App</h1>
              <br></br>
             <ErrorBoundary>
                 <Router>
