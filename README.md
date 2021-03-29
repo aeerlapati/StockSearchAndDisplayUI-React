@@ -1,4 +1,4 @@
-# react-redux-registration-login-example
+# stocks-search-and-displayUI-react
 
 React + Redux - User Registration and Login Tutorial & Example
 

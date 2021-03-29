@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import Header from '../../component/layout/Header';
 import ErrorBoundary from '../error/ErrorBoundry';
 // import '../../uisass.scss';
-import DashBoard from '../DashBoard/DashBoard';
+import DashBoard from '../Components/DashBoard';
 import alertActions from '../_actions/alert.actions';
 import { Copyright } from '@material-ui/icons';
 
