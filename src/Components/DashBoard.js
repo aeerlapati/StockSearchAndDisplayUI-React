@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import PopoverForm from './PopoverForm';
 import ShowFinancialData from './ShowFinancialData';
 import Chip from '@material-ui/core/Chip';
+import '../SetAppConfig/splash-screen.css';
 
 
 const DashBoard = ({dispatchgetStockSymbols, symbolData}) => {
@@ -15,16 +16,13 @@ const DashBoard = ({dispatchgetStockSymbols, symbolData}) => {
         overrides: {
          MuiTableRow: {
             root: {
-              backgroundColor: 'white',
               fontSize: '1000px !important',
             },
             hover: {
-               backgroundColor: 'white',
             },
            },
            MuiTableCell: {
             root: {
-              backgroundColor: 'white',
               fontSize: '15px',
             }
           }
@@ -83,7 +81,7 @@ const DashBoard = ({dispatchgetStockSymbols, symbolData}) => {
         {
           name: "Price",
           options: {
-            filter: true,
+            filter: false,
           }
         },
          {
@@ -114,12 +112,27 @@ const DashBoard = ({dispatchgetStockSymbols, symbolData}) => {
     const MINUTE_MS = 60000;
 
     useEffect(()=>{
+
       dispatchgetStockSymbols();
+
+
       // const interval = setInterval(() => {
       //       console.log('Logs every minute');
       // }, MINUTE_MS )
       //console.log(376376);
-      }, []);
+    }, []);
+
+    
+    
+    useEffect(async ()=>{
+      try {
+        setInterval(async () => {
+          dispatchgetStockSymbols();
+        }, 60000);
+      } catch(e) {
+        console.log(e);
+      }
+    }, []);
 
     useEffect(()=>{
         let tempList = [];
@@ -127,9 +140,9 @@ const DashBoard = ({dispatchgetStockSymbols, symbolData}) => {
             symbolData.stocksData.map(record => {
                                             if(record !=='' && record.stockname !== '' && record.stocksymbol != ''){
                                               tempList.push([
-                                                record.stockname,           //0
-                                                record.stocksymbol,         //1
-                                                record.stockprice           //2
+                                                record.stockName,           //0
+                                                record.stockSymbol,         //1
+                                                record.stockPrice           //2
                                               ]);
                                             }
             })
@@ -145,6 +158,14 @@ const DashBoard = ({dispatchgetStockSymbols, symbolData}) => {
     // console.log(symbolData.stocksData);
    
     return(
+         symbolData && symbolData.loading ?
+
+         <div style={{position: 'fixed',top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}} className="splash-screen">
+              <b style={{fontSize:'2.8em'}}>Loading...</b>
+              <div className="loading-dot">.</div>
+         </div>
+          :
+
         <div style={{marginTop:"20px", marginBottom:"20px", marginLeft:"30px", marginRight:"30px"}}>
           <MuiThemeProvider theme={overrideMuiTableTheme}>
             <MUIDataTable data={allStocks} columns={baseColumns} options={options} title={<div style={{background:'white', fontSize:'1.75em', fontWeight:'bold', color:'#30465f', marginLeft:'-9px', float:'left'}} > <AttachMoney style={{color:'black'}}fontSize="small"></AttachMoney> Stocks</div>} />

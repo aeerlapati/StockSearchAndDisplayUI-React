@@ -1,4 +1,4 @@
-const url = "http://stockssearchanddisplay.us-west-1.elasticbeanstalk.com/api/v1";
+const url = "http://localhost:5000/api/v1";
 export const variables = {
     getsymbols: url + '/getSymbols',
     getdata: url + '/getFinancialData',
