@@ -152,32 +152,19 @@
       useEffect(()=>{
           if(open){
             dispathGetStocksPerformaceData(dataIndex[1]);
-            //dispatchgetStockSymbols();
-            // const interval = setInterval(() => {
-            //       console.log('Logs every minute');
-            // }, MINUTE_MS )
-            //console.log(376376);
           }
         }, [open]);
 
       useEffect(()=>{
-          console.log("financeData");
-          console.log(financeData);
-          //console.log(financeDat);
 
           let tempList = [];
-          //let stockSymbolVal = financeData.data[0];
           
           if(getFinanceDataError === "" && financeData !=='' && financeData.data !== ''){
-            if(financeData.data[0].financeInfoPayload !== '' && financeData.data[0].financeInfoPayload !== 'NA'){
+            if(financeData !== '' && Object.keys(financeData.data).length > 0 && financeData.data[0].financeInfoPayload !== '' && financeData.data[0].financeInfoPayload !== 'NA'){
 
               let tempObject = JSON.parse(financeData.data[0].financeInfoPayload);
               tempObject.map(record => 
               {
-                console.log("record");
-                console.log(record);
-                console.log("record.financeInfoPayload");
-                console.log(record.financeInfoPayload);
                                             if(record !==''){
                                               tempList.push([
                                                 financeData.data[0].stockSymbol,
@@ -200,15 +187,10 @@
           }
 
           if(tempList && tempList.length > 0){
-            console.log(tempList);
-            console.timeLog("tempList");
             setAllStocks(tempList);
           }
 
       }, [financeData, getFinanceDataError]); 
-
-      // console.log("financeData.stocksData");
-      // console.log(financeData.stocksData);
     
       return(
 

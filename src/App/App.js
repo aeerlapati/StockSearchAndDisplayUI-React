@@ -18,7 +18,6 @@ const App = () => {
             <ErrorBoundary>
                 <Router>
                     <Switch>
-                        console.log(path);
                         <Route path="/web/stocks">
                             <DashBoard/>
                         </Route>
