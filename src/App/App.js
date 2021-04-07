@@ -21,12 +21,6 @@ const App = () => {
                         <Route path="/web/stocks">
                             <DashBoard/>
                         </Route>
-                        {/* <Route path="/web/stocksData" exact>
-                            <PharmacyandPrescriptionInfo/>
-                        </Route>
-                        <Route path="/web/UploadAndAttest" exact>
-                            <UploadAndAttest/>
-                        </Route> */}
                         <Route path="/">
                             <DashBoard/>
                         </Route>
